@@ -37,9 +37,6 @@ jobs:
       - name: Terraform Init
         run: terraform init
       
-      - name: Terraform import
-        run: terraform import google_compute_google_compute_network.project_vpc projects/${{ secrets.GCP_PROJECT_ID }}/global/networks/project-vpc
-
       # 6. Terraform Plan
       - name: Terraform Plan
         run: terraform plan
