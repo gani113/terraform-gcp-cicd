@@ -40,6 +40,9 @@ jobs:
       - name: Terraform import
         run: terraform import google_compute_network.project_vpc projects/${{ secrets.GCP_PROJECT_ID }}/global/networks/project-vpc
 
+      - name: Terraform import firewall
+        run: terraform import google_compute_firewall.project_fw projects/${{ secrets.GCP_PROJECT_ID }}/global/firewalls/project-fw
+
       # 6. Terraform Plan
       - name: Terraform Plan
         run: terraform plan
