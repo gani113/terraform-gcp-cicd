@@ -29,16 +29,3 @@ resource "google_compute_firewall" "allo_ssh" {
   
 }
 
-resource "google_compute_firewall" "allo_tcp" {
-    name = "allow-tcp"
-    network = google_compute_network.project_vpc.id
-    source_ranges = ["0.0.0.0/0"]
-
-    allow {
-        protocol = "tcp"
-      	ports = ["80", "443"]
-    }
-
-    target_tags = [ "tcp" ]
-  
-}
