@@ -30,6 +30,6 @@ resource "google_compute_instance" "jenkins_vm" {
 
     service_account {
       email = google_service_account.gcp_cicd_sa.email
-      scopes = [ cloud-platform ]
+      scopes = [ "cloud-platform" ]
     }
 }
