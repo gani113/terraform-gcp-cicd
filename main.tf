@@ -1,7 +1,5 @@
-data "google_service_account" "gcp_cicd_sa" {
-    account_id = "gcp-cicd-sa"
-    email = "gcp-cicd-sa@binge-projects.iam.gserviceaccount.com"
-  
+resource "google_service_account" "gcp_cicd_sa" {
+    account_id = "gcp-cicd-sa"  
 }
 
 

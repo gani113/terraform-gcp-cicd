@@ -16,4 +16,7 @@ variable "zone" {
     type = string 
 }
 
-
+variable "email" {
+    type = string
+  
+}

@@ -1,0 +1,1 @@
+email = "gcp-cicd-sa@binge-projects.iam.gserviceaccount.com"
