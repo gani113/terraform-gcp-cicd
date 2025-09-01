@@ -9,3 +9,9 @@ variable "region" {
     description = "This is Region"
     type = string
 }
+
+variable "zone" {
+    default = "us-central1-a"
+    description = "This is Zone"
+    type = string 
+}
