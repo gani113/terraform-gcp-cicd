@@ -1,6 +1,5 @@
 data "google_service_account" "gcp_cicd_sa" {
     account_id = "gcp-cicd-sa"
-    display_name = "gcp-cicd-sa"
   
 }
 
