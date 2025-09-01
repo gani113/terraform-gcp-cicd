@@ -15,8 +15,8 @@ resource "google_compute_subnetwork" "project-vpc-subnet" {
     ip_cidr_range = "10.2.0.0/16"
 }
 
-resource "google_compute_firewall" "project-fw" {
-    name = "project-fw"
+resource "google_compute_firewall" "allo_ssh" {
+    name = "allow-ssh"
     network = google_compute_network.project_vpc.id
     source_ranges = ["0.0.0.0/0"]
 
@@ -25,14 +25,20 @@ resource "google_compute_firewall" "project-fw" {
       	ports = ["22"]
     }
 
-    allow {
-        protocol = "tcp"
-      	ports = ["80"]
-    }
+    target_tags = [ "ssh" ]
+  
+}
+
+resource "google_compute_firewall" "allo_tcp" {
+    name = "allow-tcp"
+    network = google_compute_network.project_vpc.id
+    source_ranges = ["0.0.0.0/0"]
 
     allow {
         protocol = "tcp"
-      	ports = ["443"]
+      	ports = ["80", "443"]
     }
+
+    target_tags = [ "tcp" ]
   
 }
