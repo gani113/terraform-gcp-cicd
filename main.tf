@@ -15,7 +15,7 @@ resource "google_compute_instance" "jenkins_vm" {
     zone = var.zone
     boot_disk {
       initialize_params {
-        image = "ubuntu-os-cloud/ubuntu-2504"
+        image = "ubuntu-os-cloud/ubuntu-2404-lts-arm64"
         size= 20
       }
     }
