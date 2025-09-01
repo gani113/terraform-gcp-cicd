@@ -30,4 +30,8 @@ resource "google_compute_instance" "jenkins_vm" {
       email = data.google_service_account.gcp_cicd_sa.email
       scopes = [ "cloud-platform" ]
     }
+
+    metadata = {
+        enable-oslogin = "TRUE"
+    }
 }
