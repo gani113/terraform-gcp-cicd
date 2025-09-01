@@ -2,6 +2,10 @@ resource "google_compute_network" "project_vpc" {
     project = var.project
     name = "project-vpc"
     auto_create_subnetworks = false
+
+    lifecycle {
+      prevent_destroy = true
+    }
 }
 
 resource "google_compute_subnetwork" "project-vpc-subnet" {
